@@ -52,8 +52,8 @@ Battle Character class has added three member variables:
 -------------------------------------------------------------------------------------
 
 ### FEATURE - Exit Button
--Date: 11/11/2020
--Adds button that exits the application
-   -Confirmation box appears that ensures user wants to exit the entire application (YES or NO)
+   -Date: 11/11/2020
+   -Adds button that exits the application
+      -Confirmation box appears that ensures user wants to exit the entire application (YES or NO)
    
--Had to create as label since design elements (walls and characters) were sitting in foreground, covering the button
+   -Had to create as label since design elements (walls and characters) were sitting in foreground, covering the button
