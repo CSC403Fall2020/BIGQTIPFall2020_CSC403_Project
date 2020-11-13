@@ -1,4 +1,8 @@
-﻿namespace Fall2020_CSC403_Project {
+﻿using System.Drawing;
+using System.Runtime.CompilerServices;
+using System.Windows.Forms;
+
+namespace Fall2020_CSC403_Project {
   partial class FrmLevel {
     /// <summary>
     /// Required designer variable.
@@ -346,6 +350,7 @@
 			this.Controls.Add(this.picWall3);
 			this.Controls.Add(this.picBossKoolAid);
 			this.Controls.Add(this.picPlayer);
+			this.Controls.Add(this.btnExitGame);
 			this.DoubleBuffered = true;
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "FrmLevel";
@@ -403,5 +408,9 @@
 		private System.Windows.Forms.PictureBox picEnemyRonald;
 		private System.Windows.Forms.Label lblInGameTime;
 	}
+
+    //this exits the entire game
+    private System.Windows.Forms.Label btnExitGame;
+    }
 }
 

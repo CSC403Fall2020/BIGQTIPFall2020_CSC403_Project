@@ -204,4 +204,17 @@ namespace Fall2020_CSC403_Project {
 		}
 
 	}
+    private void lblInGameTime_Click(object sender, EventArgs e) {
+    
+    }
+
+    private void btnExitGame_Click(object sender, EventArgs e)
+    {
+            if (MessageBox.Show("Are you sure you want to exit the game?", "Exit", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                System.Environment.Exit(0);
+            }
+            //System.Environment.Exit(0);
+    }
+  }
 }
