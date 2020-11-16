@@ -95,7 +95,7 @@ namespace Fall2020_CSC403_Project {
 
     private void btnAttack_Click(object sender, EventArgs e) {
             player.OnAttack(-4);
-            this.Controls.Remove(this.Dialogue1);
+            this.Controls.Remove(this.Dialogue1);  //removes previous dialogue label to allow updated one (based on the enemy's health).
             this.Controls.Remove(this.Dialogue2);
             this.Controls.Remove(this.Dialogue3);
             if (enemy.Health > 0) 
@@ -111,12 +111,12 @@ namespace Fall2020_CSC403_Project {
 
             else if (enemy.Health <= 15 && enemy.Health > 10)
             {
-                this.Controls.Remove(this.Dialogue1);
+              
                 this.Controls.Add(this.Dialogue2);
             }
             else if (enemy.Health < 10)
             {
-                this.Controls.Remove(this.Dialogue2);
+            
                 this.Controls.Add(this.Dialogue3);
             }
 
@@ -169,7 +169,10 @@ namespace Fall2020_CSC403_Project {
 
         return samples[index];
     }
-    private string randomText2()
+    
+        
+        //Made for dialogues display during fights
+        private string randomText2()
     {
         Random r = new Random();
         List<string> samples = new List<string>();
