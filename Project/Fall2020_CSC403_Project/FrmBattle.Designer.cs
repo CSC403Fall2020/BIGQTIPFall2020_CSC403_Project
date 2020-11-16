@@ -26,6 +26,9 @@
             this.components = new System.ComponentModel.Container();
             this.btnAttack = new System.Windows.Forms.Button();
             this.btnRun = new System.Windows.Forms.Button();
+            this.Dialogue1 = new System.Windows.Forms.Label();
+            this.Dialogue2 = new System.Windows.Forms.Label();
+            this.Dialogue3 = new System.Windows.Forms.Label();
             this.lblPlayerHealthFull = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -66,6 +69,39 @@
             this.btnRun.Text = "Escape";
             this.btnRun.UseVisualStyleBackColor = true;
             this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
+            // 
+            // LabelDialogue1
+            // 
+            this.Dialogue1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dialogue1.Location = new System.Drawing.Point(410, 380);
+            this.Dialogue1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Dialogue1.Name = "Dialogue1";
+            this.Dialogue1.Size = new System.Drawing.Size(456, 121);
+            this.Dialogue1.TabIndex = 4;
+            this.Dialogue1.Text = this.randomText1();
+            this.Dialogue1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LabelDialogue2
+            // 
+            this.Dialogue2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dialogue2.Location = new System.Drawing.Point(390, 380);
+            this.Dialogue2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Dialogue2.Name = "Dialogue1";
+            this.Dialogue2.Size = new System.Drawing.Size(456, 121);
+            this.Dialogue2.TabIndex = 4;
+            this.Dialogue2.Text = this.randomText2();
+            this.Dialogue2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LabelDialogue3
+            // 
+            this.Dialogue3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dialogue3.Location = new System.Drawing.Point(390, 380);
+            this.Dialogue3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Dialogue3.Name = "Dialogue1";
+            this.Dialogue3.Size = new System.Drawing.Size(456, 121);
+            this.Dialogue3.TabIndex = 4;
+            this.Dialogue3.Text = this.randomText3();
+            this.Dialogue3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblPlayerHealthFull
             // 
@@ -248,5 +284,8 @@
 	private System.Windows.Forms.Label lblExperienceBarBackground;
 	private System.Windows.Forms.Label lblCurrentLevel;
 	private System.Windows.Forms.Label lblEnemyXP;
-	}
+    private System.Windows.Forms.Label Dialogue1;
+    private System.Windows.Forms.Label Dialogue2;
+    private System.Windows.Forms.Label Dialogue3;
+    }
 }

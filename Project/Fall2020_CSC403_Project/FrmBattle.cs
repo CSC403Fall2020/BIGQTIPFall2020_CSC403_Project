@@ -1,5 +1,6 @@
 ﻿using Fall2020_CSC403_Project.code;
 using Fall2020_CSC403_Project.Properties;
+using System.Collections.Generic; 
 using System;
 using System.Drawing;
 using System.Media;
@@ -93,12 +94,34 @@ namespace Fall2020_CSC403_Project {
 		}
 
     private void btnAttack_Click(object sender, EventArgs e) {
-      player.OnAttack(-4);
-      if (enemy.Health > 0) {
-        enemy.OnAttack(-2);
-      }
+            player.OnAttack(-4);
+            this.Controls.Remove(this.Dialogue1);
+            this.Controls.Remove(this.Dialogue2);
+            this.Controls.Remove(this.Dialogue3);
+            if (enemy.Health > 0) 
+            {
+                enemy.OnAttack(-2);
 
-			if (player.Health > 0 && enemy.Health <= 0) {
+            }
+
+            if (enemy.Health > 15)
+            {
+                this.Controls.Add(this.Dialogue1);
+            }
+
+            else if (enemy.Health <= 15 && enemy.Health > 10)
+            {
+                this.Controls.Remove(this.Dialogue1);
+                this.Controls.Add(this.Dialogue2);
+            }
+            else if (enemy.Health < 10)
+            {
+                this.Controls.Remove(this.Dialogue2);
+                this.Controls.Add(this.Dialogue3);
+            }
+
+
+            if (player.Health > 0 && enemy.Health <= 0) {
 				// Update the ExperienceBar sending the enemies Experience at death.
 				UpdateExperienceBar(enemy.ExperienceOnDeath);
 			}
@@ -132,5 +155,47 @@ namespace Fall2020_CSC403_Project {
 		private void FrmBattle_Load(object sender, EventArgs e) {
 
 		}
-	}
+
+
+    private string randomText1()
+    {
+        Random r = new Random();
+        List<string> samples = new List<string>();
+        samples.Add("Do you know who I am kid ?");
+        samples.Add("Let me teach you a lesson kid");
+        samples.Add("You think you can beat me?");
+
+        int index = r.Next(samples.Count);
+
+        return samples[index];
+    }
+    private string randomText2()
+    {
+        Random r = new Random();
+        List<string> samples = new List<string>();
+        samples.Add("This is getting interesting");
+        samples.Add("Hold on...I'm bleeding !? me!?");
+        samples.Add("It's over for you!!!");
+        samples.Add("hmmm...this kinda hurt");
+
+        int index = r.Next(samples.Count);
+
+        return samples[index];
+    }
+    private string randomText3()
+    {
+        Random r = new Random();
+        List<string> samples = new List<string>();
+        samples.Add("This is not looking good...");
+        samples.Add("Am I going to...? impossibe!!!");
+        samples.Add("This ends here and now!!!");
+
+        int index = r.Next(samples.Count);
+
+        return samples[index];
+    }
+
+    }
+
+
 }
