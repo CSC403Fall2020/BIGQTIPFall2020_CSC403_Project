@@ -11,10 +11,10 @@ namespace Fall2020_CSC403_Project {
     public static FrmBattle instance = null;
     private Enemy enemy;
     private Player player;
-    private bool enemyDied = false;
-    private FrmBattle()
-    { InitializeComponent();
-	    player = Game.player;
+
+    private FrmBattle() {
+      InitializeComponent();
+      player = Game.player;
     }
 
     public void Setup() {
@@ -56,6 +56,7 @@ namespace Fall2020_CSC403_Project {
       }
       return instance;
     }
+
     private void UpdateHealthBars() {
       float playerHealthPer = player.Health / (float)player.MaxHealth;
       float enemyHealthPer = enemy.Health / (float)enemy.MaxHealth;
@@ -123,27 +124,16 @@ namespace Fall2020_CSC403_Project {
             if (player.Health > 0 && enemy.Health <= 0) {
 				// Update the ExperienceBar sending the enemies Experience at death.
 				UpdateExperienceBar(enemy.ExperienceOnDeath);
-				this.enemy.Collider.Hide();
-				enemyDied = true;
-            }
+			}
 
       UpdateHealthBars();
       if (player.Health <= 0 || enemy.Health <= 0) {
-	      instance = null;
-	      Close();
+        instance = null;
+        Close();
       }
     }
 
-    public bool EnemyDied()
-    {
-	    return (enemyDied);
-    }
-
-    public Enemy CurrentEnemy()
-    {
-	    return (enemy);
-    }
-    private void btnRun_Click(object sender, EventArgs e)
+        private void btnRun_Click(object sender, EventArgs e)
         {
             instance = null;
             Close();
@@ -155,7 +145,6 @@ namespace Fall2020_CSC403_Project {
 
     private void PlayerDamage(int amount) {
       player.AlterHealth(amount);
-      
     }
 
     private void tmrFinalBattle_Tick(object sender, EventArgs e) {
