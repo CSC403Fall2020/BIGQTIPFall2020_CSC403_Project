@@ -2,7 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using Timer = System.Threading.Timer;
 
 namespace Fall2020_CSC403_Project
 {
@@ -19,7 +22,7 @@ namespace Fall2020_CSC403_Project
 
         private DateTime timeBegin;
         private FrmBattle frmBattle;
-
+        
 
         public FrmLevel()
         {
@@ -39,30 +42,35 @@ namespace Fall2020_CSC403_Project
             enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING))
             {
                 Img = picEnemyPoisonPacket.BackgroundImage,
-                Color = Color.Green
+                Color = Color.Green,
+                Name = "PoisonPacket"
 
             };
 
             enemyCheeto = new Enemy(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING))
             {
                 Img = picEnemyCheeto.BackgroundImage,
-                Color = Color.FromArgb(255, 245, 161)
+                Color = Color.FromArgb(255, 245, 161),
+                Name = "Cheeto"
             };
 
             enemyTony = new Enemy(CreatePosition(picEnemyTony), CreateCollider(picEnemyTony, PADDING))
             {
                 Img = picEnemyTony.BackgroundImage,
-                Color = Color.Orange
+                Color = Color.Orange,
+                Name = "Tony"
             };
 
             enemyRonald = new Enemy(CreatePosition(picEnemyRonald), CreateCollider(picEnemyRonald, PADDING))
             {
                 Img = picEnemyRonald.BackgroundImage,
-                Color = Color.Yellow
+                Color = Color.Yellow,
+                Name = "Ronald"
             };
 
             bossKoolaid.Img = picBossKoolAid.BackgroundImage;
             bossKoolaid.Color = Color.Red;
+            bossKoolaid.Name = "KoolaidBoss";
 
             walls = new Character[NUM_WALLS];
             for (int w = 0; w < NUM_WALLS; w++)
@@ -113,6 +121,9 @@ namespace Fall2020_CSC403_Project
             if (HitAChar(player, enemyPoisonPacket) && picEnemyPoisonPacket.Visible)
             {
                 Fight(enemyPoisonPacket);
+                picEnemyPoisonPacket.Hide();
+                
+
             }
             else if (HitAChar(player, enemyTony) && picEnemyTony.Visible)
             {
@@ -160,14 +171,44 @@ namespace Fall2020_CSC403_Project
             player.MoveBack();
             frmBattle = FrmBattle.GetInstance(enemy);
             frmBattle.Show();
-
             if (enemy == bossKoolaid)
             {
                 frmBattle.SetupForBossBattle();
             }
+            frmBattle.FormClosed += new FormClosedEventHandler(frm_FormClosed);
         }
-
-        private void FrmLevel_KeyDown(object sender, KeyEventArgs e)
+        private void frm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if(frmBattle.EnemyDied())
+            {
+                if (frmBattle.CurrentEnemy().Name == "Cheeto")
+                {
+                    picEnemyCheeto.Hide();
+                }
+                if (frmBattle.CurrentEnemy().Name == "Ronald")
+                {
+                    picEnemyRonald.Hide();
+                }
+                if (frmBattle.CurrentEnemy().Name == "PoisonPacket")
+                {
+                    picEnemyPoisonPacket.Hide();
+                }
+                if (frmBattle.CurrentEnemy().Name == "Tony")
+                {
+                    picEnemyTony.Hide();
+                }
+                if (frmBattle.CurrentEnemy().Name == "KoolaidBoss")
+                {
+                    picBossKoolAid.Hide();
+                }
+            }
+        }
+      public void DeleteEnemy()
+      {
+          
+              picEnemyCheeto.Hide();
+      }
+      private void FrmLevel_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
             {
