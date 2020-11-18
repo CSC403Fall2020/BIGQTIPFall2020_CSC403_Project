@@ -123,9 +123,6 @@ namespace Fall2020_CSC403_Project
             if (HitAChar(player, enemyPoisonPacket) && picEnemyPoisonPacket.Visible)
             {
                 Fight(enemyPoisonPacket);
-                picEnemyPoisonPacket.Hide();
-                
-
             }
             else if (HitAChar(player, enemyTony) && picEnemyTony.Visible)
             {
@@ -179,40 +176,41 @@ namespace Fall2020_CSC403_Project
             {
                 frmBattle.SetupForBossBattle();
             }
-            frmBattle.FormClosed += new FormClosedEventHandler(frm_FormClosed);
+            frmBattle.FormClosed += new FormClosedEventHandler(frm_FormClosed);//when battle form closed it calls the method frm-FormClosed
         }
+        // Method that hides a enemy's picture from the level
         private void frm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if(frmBattle.EnemyDied())
+            if (frmBattle.EnemyDied())
             {
                 if (frmBattle.CurrentEnemy().Name == "Cheeto")
                 {
                     picEnemyCheeto.Hide();
                 }
+
                 if (frmBattle.CurrentEnemy().Name == "Ronald")
                 {
                     picEnemyRonald.Hide();
                 }
+
                 if (frmBattle.CurrentEnemy().Name == "PoisonPacket")
                 {
                     picEnemyPoisonPacket.Hide();
                 }
+
                 if (frmBattle.CurrentEnemy().Name == "Tony")
                 {
                     picEnemyTony.Hide();
                 }
+
                 if (frmBattle.CurrentEnemy().Name == "KoolaidBoss")
                 {
                     picBossKoolAid.Hide();
                 }
             }
         }
-      public void DeleteEnemy()
-      {
-          
-              picEnemyCheeto.Hide();
-      }
-      private void FrmLevel_KeyDown(object sender, KeyEventArgs e)
+
+        private void FrmLevel_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
             {
@@ -278,12 +276,6 @@ namespace Fall2020_CSC403_Project
                     picEnemyRonald.Visible = true;
             }
         }
-
-        private void lblInGameTime_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnExitGame_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to exit the game?", "Exit", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
