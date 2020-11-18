@@ -101,3 +101,21 @@ This function plays a sound dependent upon the enemy for the current battle. It 
 ###**Other Changes**
 -Modified btAttack_Click() to play sounds upon death of enemies and characters as well as attack sounds.
 
+-------------------------------------------------------------------------------------
+
+### FEATURE - Enemies Die
+-Date: 11/17/2020
+-When the player defeats an enemy in battle, after the battle window closes, the enemy and it's collider are hidden from the player on the map.
+#### **frm_FormClosed()**
+in the FrmLevel class, is called when battle form is closed using an event handler in the Fight() method
+first checks to see if the player defeated the enemy by calling frmBattle.EnemyDied()
+then gets what enemy was defeated by calling frmBattle.CurrentEnemy() and deletes that enemies picture on FrmLevel
+#### **EnemyDied()**
+In the FrmBattle class, returns boolean true if player killed the enemy in battle, false if not 
+#### **CurrentEnemy()**
+In the FrmBattle class, returns Type enemey, the current enemy that the player is against
+#### **Hide()**
+In the collider class, method that deletes collider
+#### **Other Changes**
+-Added names to enemy's class
+-Added Boolean value to FrmBattle to track if enemy is defeated
