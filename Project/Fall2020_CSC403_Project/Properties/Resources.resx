@@ -145,6 +145,36 @@
   <data name="final_battle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\final_battle.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Battle_Music" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\Battle_Music.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Attack_Sound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\Attack_Sound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Enemies_Die" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\Enemies_Die.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Flamin_Battle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\Flamin_Battle.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Koolaid_Battle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\Koolaid_Battle.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Koolaid_Die" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\Koolaid_Die.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Peanut_Dies" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\Peanut_Dies.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Ronald_Battle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\Ronald_Battle.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Tony_Battle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\Tony_Battle.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Wall_Thud" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\Wall_Thud.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="wall" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\wall.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

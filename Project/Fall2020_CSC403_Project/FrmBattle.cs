@@ -11,6 +11,7 @@ namespace Fall2020_CSC403_Project {
     private Enemy enemy;
     private Player player;
 
+
     private FrmBattle() {
       InitializeComponent();
       player = Game.player;
@@ -24,6 +25,7 @@ namespace Fall2020_CSC403_Project {
       picBossBattle.Visible = false;
 			// Show enemies experience given on kill
 			lblEnemyXP.Text = enemy.ExperienceOnDeath.ToString() + " xp";
+
 
       // Observer pattern
       enemy.AttackEvent += PlayerDamage;
@@ -40,8 +42,14 @@ namespace Fall2020_CSC403_Project {
       picBossBattle.Size = ClientSize;
       picBossBattle.Visible = true;
 
+     // SoundPlayer battleMusic = new SoundPlayer(Resources.Battle_Music);
+     // battleMusic.Stream.Position = 0;      
+ 
+     // battleMusic.Play();
+      
       SoundPlayer simpleSound = new SoundPlayer(Resources.final_battle);
       simpleSound.Play();
+
 
       tmrFinalBattle.Enabled = true;
     }
@@ -53,7 +61,7 @@ namespace Fall2020_CSC403_Project {
 				};
 				instance.Setup();
       }
-      return instance;
+        return instance;
     }
 
     private void UpdateHealthBars() {
@@ -126,5 +134,39 @@ namespace Fall2020_CSC403_Project {
 		private void FrmBattle_Load(object sender, EventArgs e) {
 
 		}
-	}
+    public void PlayBattleSound (Enemy enemy) {
+
+        if (enemy == enemyPoisonPacket)
+        {
+            SoundPlayer packetSound = new SoundPlayer(Resources.Battle_Music);
+            packetSound.Stream.Position = 0;
+
+            packetSound.Play();
+        }
+
+        if (enemy == enemyCheeto)
+        {
+            SoundPlayer cheetoSound = new SoundPlayer(Resources.Flamin_Battle);
+            cheetoSound.Stream.Position = 0;
+
+            cheetoSound.Play();
+        }
+
+        if (enemy == enemyTony)
+        {
+            SoundPlayer tonySound = new SoundPlayer(Resources.Tony_Battle);
+            tonySound.Stream.Position = 0;
+
+            tonySound.Play();
+        }
+
+        if (enemy == enemyRonald)
+        {
+            SoundPlayer ronaldSound = new SoundPlayer(Resources.Ronald_Battle);
+            ronaldSound.Stream.Position = 0;
+
+            ronaldSound.Play();
+        }
+    }
+  }
 }

@@ -127,8 +127,19 @@
     <None Include="Resources\Tony.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="data\Attack_Sound.wav" />
+    <Content Include="data\Battle_Music.wav" />
     <Content Include="data\colonel.png" />
+    <Content Include="data\Enemies_Die.wav" />
     <Content Include="data\enemy_tony.png" />
+    <Content Include="data\Flamin_Battle.wav" />
+    <Content Include="data\Koolaid_Battle.wav" />
+    <Content Include="data\Koolaid_Die.wav" />
+    <Content Include="data\Peanut_Dies.wav" />
+    <Content Include="data\Ronald_Battle.wav" />
+    <Content Include="data\Tony_Battle.wav" />
+    <Content Include="data\Wall_Thud.wav" />
+    <Content Include="Resources\Battle_Music.wav" />
     <None Include="Resources\kisspng-ronald-mcdonald-fast-food-hamburger-mcdonald-s-res-5aef4be5530783.2117885115256319733401.png" />
     <None Include="Resources\kisspng-vertebrate-character-mascot-clip-art-tony-the-tiger-5b08e780ce6ed6.9843005815273102088456.png" />
   </ItemGroup>
