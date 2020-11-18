@@ -98,6 +98,7 @@ namespace Fall2020_CSC403_Project
 			// picEnemyRonald
 			// 
 			this.picEnemyRonald.BackColor = System.Drawing.Color.Transparent;
+			this.picEnemyRonald.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.kisspng_ronald_mcdonald_fast_food_hamburger_mcdonald_s_res_5aef4be5530783_2117885115256319733401;
 			this.picEnemyRonald.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.picEnemyRonald.Location = new System.Drawing.Point(862, 1062);
 			this.picEnemyRonald.Margin = new System.Windows.Forms.Padding(4);
