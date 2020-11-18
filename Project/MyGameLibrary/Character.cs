@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Fall2020_CSC403_Project.code {
   public class Character {
@@ -13,7 +14,12 @@ namespace Fall2020_CSC403_Project.code {
     public Vector2 Position { get; private set; }
     public Collider Collider { get; private set; }
 
-    public Character(Vector2 initPos, Collider collider) {
+   /// <summary>
+   /// This is the image for the character
+   /// </summary>
+   public Image Sprite { get; set; }
+
+        public Character(Vector2 initPos, Collider collider) {
       Position = initPos;
       Collider = collider;
     }
@@ -44,5 +50,6 @@ namespace Fall2020_CSC403_Project.code {
     public void ResetMoveSpeed() {
       MoveSpeed = new Vector2(0, 0);
     }
+
   }
 }

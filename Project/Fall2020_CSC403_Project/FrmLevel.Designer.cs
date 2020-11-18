@@ -387,7 +387,7 @@ namespace Fall2020_CSC403_Project
 		#endregion
 
 		private System.Windows.Forms.PictureBox picPlayer;
-		private System.Windows.Forms.PictureBox picBossKoolAid;
+        private System.Windows.Forms.PictureBox picBossKoolAid;
 		private System.Windows.Forms.Timer tmrUpdateInGameTime;
 		private System.Windows.Forms.Timer tmrPlayerMove;
 		private System.Windows.Forms.PictureBox picWall3;
