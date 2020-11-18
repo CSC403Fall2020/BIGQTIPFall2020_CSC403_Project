@@ -22,7 +22,7 @@ namespace Fall2020_CSC403_Project
 
         private DateTime timeBegin;
         private FrmBattle frmBattle;
-        
+
 
         public FrmLevel()
         {
@@ -32,14 +32,15 @@ namespace Fall2020_CSC403_Project
         private void FrmLevel_Load(object sender, EventArgs e)
         {
             const int PADDING = 7;
-            const int NUM_WALLS = 13;
+            const int NUM_WALLS = 16;
 
             player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
             bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
 
             SpawnEnemies();
 
-            enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING))
+            enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket),
+                CreateCollider(picEnemyPoisonPacket, PADDING))
             {
                 Img = picEnemyPoisonPacket.BackgroundImage,
                 Color = Color.Green,
@@ -117,12 +118,44 @@ namespace Fall2020_CSC403_Project
                 player.MoveBack();
             }
 
+            if (HitAExit(player) == 1)
+            {
+                picWall7.Hide();
+                walls[7].Collider.Hide();
+                picWall3.Hide();
+                walls[3].Collider.Hide();
+                picWall9.Hide();
+                walls[9].Collider.Hide();
+                picWall10.Hide();
+                walls[10].Collider.Hide();
+                picWall11.Hide();
+                walls[11].Collider.Hide();
+                picWall12.Hide();
+                walls[12].Collider.Hide();
+                player.MoveTo(1040, 600);
+            }
+
+            if (HitAExit(player) == 0)
+            {
+                picWall7.Show();
+                walls[7].Collider.Show();
+                picWall3.Show();
+                walls[3].Collider.Show();
+                picWall9.Show();
+                walls[9].Collider.Show();
+                picWall10.Show();
+                walls[10].Collider.Show();
+                picWall11.Show();
+                walls[11].Collider.Show();
+                picWall12.Show();
+                walls[12].Collider.Show();
+                player.MoveTo(1040, 100);
+            }
+
             // check collision with enemies
             if (HitAChar(player, enemyPoisonPacket) && picEnemyPoisonPacket.Visible)
             {
                 Fight(enemyPoisonPacket);
-                picEnemyPoisonPacket.Hide();
-                
 
             }
             else if (HitAChar(player, enemyTony) && picEnemyTony.Visible)
@@ -137,13 +170,14 @@ namespace Fall2020_CSC403_Project
             {
                 Fight(enemyRonald);
             }
+
             if (HitAChar(player, bossKoolaid))
             {
                 Fight(bossKoolaid);
             }
 
             // update player's picture box
-            picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+            picPlayer.Location = new Point((int) player.Position.x, (int) player.Position.y);
         }
 
         private bool HitAWall(Character c)
@@ -157,7 +191,23 @@ namespace Fall2020_CSC403_Project
                     break;
                 }
             }
+
             return hitAWall;
+        }
+
+        private int HitAExit(Character c)
+        {
+            if (c.Collider.Intersects(walls[13].Collider))
+            {
+                return (1);
+            }
+
+            if (c.Collider.Intersects(walls[14].Collider))
+            {
+                return (0);
+            }
+
+            return 3;
         }
 
         private bool HitAChar(Character you, Character other)
@@ -175,118 +225,117 @@ namespace Fall2020_CSC403_Project
             {
                 frmBattle.SetupForBossBattle();
             }
+
             frmBattle.FormClosed += new FormClosedEventHandler(frm_FormClosed);
         }
+
         private void frm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if(frmBattle.EnemyDied())
+            if (frmBattle.EnemyDied())
             {
                 if (frmBattle.CurrentEnemy().Name == "Cheeto")
                 {
                     picEnemyCheeto.Hide();
                 }
+
                 if (frmBattle.CurrentEnemy().Name == "Ronald")
                 {
                     picEnemyRonald.Hide();
                 }
+
                 if (frmBattle.CurrentEnemy().Name == "PoisonPacket")
                 {
                     picEnemyPoisonPacket.Hide();
                 }
+
                 if (frmBattle.CurrentEnemy().Name == "Tony")
                 {
                     picEnemyTony.Hide();
                 }
+
                 if (frmBattle.CurrentEnemy().Name == "KoolaidBoss")
                 {
                     picBossKoolAid.Hide();
                 }
             }
         }
-      public void DeleteEnemy()
-      {
-          
-              picEnemyCheeto.Hide();
-      }
-      private void FrmLevel_KeyDown(object sender, KeyEventArgs e)
-        {
-            switch (e.KeyCode)
-            {
-                case Keys.Left:
-                    player.GoLeft();
-                    break;
 
-                case Keys.Right:
-                    player.GoRight();
-                    break;
+        private void FrmLevel_KeyDown(object sender, KeyEventArgs e)
+                {
+                    switch (e.KeyCode)
+                    {
+                        case Keys.Left:
+                            player.GoLeft();
+                            break;
 
-                case Keys.Up:
-                    player.GoUp();
-                    break;
+                        case Keys.Right:
+                            player.GoRight();
+                            break;
 
-                case Keys.Down:
-                    player.GoDown();
-                    break;
+                        case Keys.Up:
+                            player.GoUp();
+                            break;
 
-                default:
-                    player.ResetMoveSpeed();
-                    break;
+                        case Keys.Down:
+                            player.GoDown();
+                            break;
+
+                        default:
+                            player.ResetMoveSpeed();
+                            break;
+                    }
+                }
+
+                private int[] RandomIntegers()
+                {
+                    Random ran = new Random();
+                    int getRanNum1 = ran.Next(4);
+                    int getRanNum2 = ran.Next(4);
+                    int getRanNum3 = ran.Next(4);
+                    // loop until you get two unique numbers
+                    while (getRanNum1 == getRanNum2)
+                        getRanNum2 = ran.Next(4);
+                    // loop until you get a third number unique from the first two
+                    while ((getRanNum3 == getRanNum2) || (getRanNum3 == getRanNum1))
+                        getRanNum3 = ran.Next(4);
+                    int[] randomIntArray = {getRanNum1, getRanNum2, getRanNum3};
+                    return randomIntArray;
+                }
+
+                private void SpawnEnemies()
+                {
+                    // Get which random integers will spawn enemies
+                    int[] enemyInitilizerArray = RandomIntegers();
+
+                    // Hide all pictureboxes
+                    picEnemyPoisonPacket.Visible = false;
+                    picEnemyCheeto.Visible = false;
+                    picEnemyTony.Visible = false;
+                    picEnemyRonald.Visible = false;
+
+                    // Randomize Which Enemies are "spawned" on the map
+                    foreach (int i in enemyInitilizerArray)
+                    {
+                        if (i == 0)
+                            picEnemyPoisonPacket.Visible = true;
+                        else if (i == 1)
+                            picEnemyCheeto.Visible = true;
+                        else if (i == 2)
+                            picEnemyTony.Visible = true;
+                        else if (i == 3)
+                            picEnemyRonald.Visible = true;
+                    }
+                }
+
+                private void btnExitGame_Click(object sender, EventArgs e)
+                {
+                    if (MessageBox.Show("Are you sure you want to exit the game?", "Exit", MessageBoxButtons.YesNo) ==
+                        System.Windows.Forms.DialogResult.Yes)
+                    {
+                        System.Environment.Exit(0);
+                    }
+
+                    //System.Environment.Exit(0);
+                }
             }
         }
-
-        private int[] RandomIntegers()
-        {
-            Random ran = new Random();
-            int getRanNum1 = ran.Next(4);
-            int getRanNum2 = ran.Next(4);
-            int getRanNum3 = ran.Next(4);
-            // loop until you get two unique numbers
-            while (getRanNum1 == getRanNum2)
-                getRanNum2 = ran.Next(4);
-            // loop until you get a third number unique from the first two
-            while ((getRanNum3 == getRanNum2) || (getRanNum3 == getRanNum1))
-                getRanNum3 = ran.Next(4);
-            int[] randomIntArray = { getRanNum1, getRanNum2, getRanNum3 };
-            return randomIntArray;
-        }
-
-        private void SpawnEnemies()
-        {
-            // Get which random integers will spawn enemies
-            int[] enemyInitilizerArray = RandomIntegers();
-
-            // Hide all pictureboxes
-            picEnemyPoisonPacket.Visible = false;
-            picEnemyCheeto.Visible = false;
-            picEnemyTony.Visible = false;
-            picEnemyRonald.Visible = false;
-
-            // Randomize Which Enemies are "spawned" on the map
-            foreach (int i in enemyInitilizerArray)
-            {
-                if (i == 0)
-                    picEnemyPoisonPacket.Visible = true;
-                else if (i == 1)
-                    picEnemyCheeto.Visible = true;
-                else if (i == 2)
-                    picEnemyTony.Visible = true;
-                else if (i == 3)
-                    picEnemyRonald.Visible = true;
-            }
-        }
-
-        private void lblInGameTime_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnExitGame_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Are you sure you want to exit the game?", "Exit", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
-            {
-                System.Environment.Exit(0);
-            }
-            //System.Environment.Exit(0);
-        }
-    }
-}
