@@ -134,3 +134,8 @@ This function returns a boolean for if the player died. Returns true if the play
 - Modified frm_FormClosed() to check if the player was killed by the cheeto and updates the player's sprite if so.
 - Created 1 new sprite for the player: cheeto_cat
 - Added a wrapper for the player sprite
+
+### FEATURE - Multiple rooms
+- Date: 11/18/2020
+- This feature is in beta and has not been pulled to the main, the branch for this feature is 2rooms
+- This feature will not be in the product due to not being completed before end of sprint.
