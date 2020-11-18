@@ -118,7 +118,39 @@ namespace Fall2020_CSC403_Project
             {
                 player.MoveBack();  
             }
-
+            if (HitAExit(player) == 1)
+                        {
+                            picWall7.Hide();
+                            walls[7].Collider.Hide();
+                            picWall3.Hide();
+                            walls[3].Collider.Hide();
+                            picWall9.Hide();
+                            walls[9].Collider.Hide();
+                            picWall10.Hide();
+                            walls[10].Collider.Hide();
+                            picWall11.Hide();
+                            walls[11].Collider.Hide();
+                            picWall12.Hide();
+                            walls[12].Collider.Hide();
+                            player.MoveTo(1040, 600);
+                        }
+            
+                        if (HitAExit(player) == 0)
+                        {
+                            picWall7.Show();
+                            walls[7].Collider.Show();
+                            picWall3.Show();
+                            walls[3].Collider.Show();
+                            picWall9.Show();
+                            walls[9].Collider.Show();
+                            picWall10.Show();
+                            walls[10].Collider.Show();
+                            picWall11.Show();
+                            walls[11].Collider.Show();
+                            picWall12.Show();
+                            walls[12].Collider.Show();
+                            player.MoveTo(1040, 100);
+                        }
             // check collision with enemies
             if (HitAChar(player, enemyPoisonPacket) && picEnemyPoisonPacket.Visible)
             {
@@ -157,6 +189,20 @@ namespace Fall2020_CSC403_Project
                 }
             }
             return hitAWall;
+        }
+        private int HitAExit(Character c)
+        {
+            if (c.Collider.Intersects(walls[13].Collider))
+            {
+                return (1);
+            }
+
+            if (c.Collider.Intersects(walls[14].Collider))
+            {
+                return (0);
+            }
+
+            return 3;
         }
 
         private bool HitAChar(Character you, Character other)

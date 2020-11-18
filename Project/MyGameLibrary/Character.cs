@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Fall2020_CSC403_Project.code {
   public class Character {
     private const int GO_INC = 3;
-
+    
     public Vector2 MoveSpeed { get; private set; }
     public Vector2 LastPosition { get; private set; }
     public Vector2 Position { get; private set; }
@@ -23,7 +23,11 @@ namespace Fall2020_CSC403_Project.code {
       Position = new Vector2(Position.x + MoveSpeed.x, Position.y + MoveSpeed.y);
       Collider.MovePosition((int)Position.x, (int)Position.y);
     }
-
+    public void MoveTo(int x, int y) {
+      LastPosition = Position;
+      Position = new Vector2(x,y);
+      Collider.MovePosition(x,y);
+    }
     public void MoveBack() {
       Position = LastPosition;
     }
