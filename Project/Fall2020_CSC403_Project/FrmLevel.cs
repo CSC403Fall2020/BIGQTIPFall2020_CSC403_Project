@@ -34,7 +34,7 @@ namespace Fall2020_CSC403_Project
         private void FrmLevel_Load(object sender, EventArgs e)
         {
             const int PADDING = 7;
-            const int NUM_WALLS = 13;
+            const int NUM_WALLS = 16;
 
             player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
             bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
