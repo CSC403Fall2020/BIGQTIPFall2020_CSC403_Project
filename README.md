@@ -58,3 +58,8 @@ Battle Character class has added three member variables:
    
 -Had to create as label since design elements (walls and characters) were sitting in foreground, covering the button
 -Created function for label click functionality, btnExitGame_Click() in FrmLevel.cs which works with instantiated label in FrmLevel.Designer.cs
+
+### FEATURE - Splash Screen / Title Slide
+-Date: 11/17/2020
+-Game begins with a splash screen introduction that then closes and enters the game
+-Used a new windows form that is run separately in Programs.cs and then is subsequently closed with the .Close() command in its SplashScreen.Designer.cs file.  Then the program returns to normal use, creating the level form and continuing from there
