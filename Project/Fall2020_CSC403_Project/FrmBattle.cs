@@ -13,6 +13,8 @@ namespace Fall2020_CSC403_Project {
         private Enemy enemy;
         private Player player;
         private bool enemyDied = false;
+        private bool playerDied = false;
+
         private FrmBattle()
         {
             InitializeComponent();
@@ -21,6 +23,10 @@ namespace Fall2020_CSC403_Project {
 
         public void Setup()
         {
+            // update for current player sprite
+            picPlayer.BackgroundImage = player.Sprite;
+            picPlayer.Refresh();
+
             // update for this enemy
             picEnemy.BackgroundImage = enemy.Img;
             picEnemy.Refresh();
@@ -157,6 +163,13 @@ namespace Fall2020_CSC403_Project {
                     SoundPlayer peanutDies = new SoundPlayer(Resources.Peanut_Dies);
                     peanutDies.Stream.Position = 0;
                     peanutDies.Play();
+
+                    // switch sprite for cheetoCat
+                    if (enemy.Name == "Cheeto")
+                    {
+                        playerDied = true;
+                        
+                    }
                 }
                 if (enemy.Health <= 0)
                 {
@@ -182,6 +195,11 @@ namespace Fall2020_CSC403_Project {
         public bool EnemyDied()
         {
             return (enemyDied);
+        }
+
+        public bool PlayerDied()
+        {
+            return (playerDied);
         }
 
         public Enemy CurrentEnemy()

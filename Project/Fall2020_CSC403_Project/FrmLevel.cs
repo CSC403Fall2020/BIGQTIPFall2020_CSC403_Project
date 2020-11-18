@@ -14,6 +14,7 @@ namespace Fall2020_CSC403_Project
     public partial class FrmLevel : Form
     {
         private Player player;
+        private Player cheetoCat;
 
         private Enemy enemyPoisonPacket;
         private Enemy bossKoolaid;
@@ -36,7 +37,11 @@ namespace Fall2020_CSC403_Project
             const int PADDING = 7;
             const int NUM_WALLS = 13;
 
-            player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
+            player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING))
+            {
+                Sprite = picPlayer.BackgroundImage
+            };
+
             bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
 
             SpawnEnemies();
@@ -205,6 +210,11 @@ namespace Fall2020_CSC403_Project
                 {
                     picBossKoolAid.Hide();
                 }
+            }
+            if (frmBattle.PlayerDied())
+            {
+                picPlayer.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.cheeto_cat;
+                player.Sprite = picPlayer.BackgroundImage;
             }
         }
       public void DeleteEnemy()

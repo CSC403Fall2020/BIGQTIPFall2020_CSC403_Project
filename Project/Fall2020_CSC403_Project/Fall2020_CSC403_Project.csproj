@@ -137,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="data\Attack_Sound.wav" />
+    <Content Include="data\cheeto_cat.png" />
     <Content Include="data\colonel.png" />
     <Content Include="data\Enemies_Die.wav" />
     <Content Include="data\enemy_tony.png" />
