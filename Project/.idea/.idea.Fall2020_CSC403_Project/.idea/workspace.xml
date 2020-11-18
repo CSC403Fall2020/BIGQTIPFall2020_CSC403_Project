@@ -29,7 +29,6 @@
   <component name="ChangeListManager">
     <list default="true" id="718ac378-7ec6-418a-a9a3-2ec6c5ead9c6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,10 +41,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.Designer.cs" />
         <option value="$PROJECT_DIR$/MyGameLibrary/Character.cs" />
         <option value="$PROJECT_DIR$/MyGameLibrary/Collider.cs" />
         <option value="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.cs" />
+        <option value="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.Designer.cs" />
       </list>
     </option>
   </component>
@@ -104,7 +103,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -116,28 +115,33 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="663" height="252" key="GridCell.Tab.0.bottom" timestamp="1605735981739">
+    <state x="423" y="238" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605736942104">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="663" height="252" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1605735981739" />
-    <state width="663" height="252" key="GridCell.Tab.0.center" timestamp="1605735981739">
+    <state x="423" y="238" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1368.872@0.0.1368.872" timestamp="1605736942104" />
+    <state width="1326" height="252" key="GridCell.Tab.0.bottom" timestamp="1605738058843">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="663" height="252" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1605735981739" />
-    <state width="663" height="252" key="GridCell.Tab.0.left" timestamp="1605735981739">
+    <state width="1326" height="252" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1605738058843" />
+    <state width="1326" height="252" key="GridCell.Tab.0.center" timestamp="1605738058843">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="663" height="252" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1605735981739" />
-    <state width="663" height="252" key="GridCell.Tab.0.right" timestamp="1605735981739">
+    <state width="1326" height="252" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1605738058843" />
+    <state width="1326" height="252" key="GridCell.Tab.0.left" timestamp="1605738058843">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="663" height="252" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1605735981739" />
+    <state width="1326" height="252" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1605738058843" />
+    <state width="1326" height="252" key="GridCell.Tab.0.right" timestamp="1605738058843">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="252" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1605738058843" />
     <state x="265" y="171" key="IDE.errors.dialog" timestamp="1605735974231">
       <screen x="0" y="0" width="1368" height="872" />
     </state>

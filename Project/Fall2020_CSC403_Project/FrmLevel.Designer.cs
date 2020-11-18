@@ -110,6 +110,7 @@ namespace Fall2020_CSC403_Project
 			// 
 			this.picEnemyTony.BackColor = System.Drawing.Color.Transparent;
 			this.picEnemyTony.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.picEnemyTony.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.kisspng_vertebrate_character_mascot_clip_art_tony_the_tiger_5b08e780ce6ed6_9843005815273102088456;
 			this.picEnemyTony.Location = new System.Drawing.Point(994, 188);
 			this.picEnemyTony.Margin = new System.Windows.Forms.Padding(6);
 			this.picEnemyTony.Name = "picEnemyTony";
