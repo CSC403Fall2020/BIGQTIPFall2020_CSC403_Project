@@ -59,7 +59,45 @@ Battle Character class has added three member variables:
 -Had to create as label since design elements (walls and characters) were sitting in foreground, covering the button
 -Created function for label click functionality, btnExitGame_Click() in FrmLevel.cs which works with instantiated label in FrmLevel.Designer.cs
 
-### FEATURE - Splash Screen / Title Slide
--Date: 11/17/2020
--Game begins with a splash screen introduction that then closes and enters the game
--Used a new windows form that is run separately in Programs.cs and then is subsequently closed with the .Close() command in its SplashScreen.Designer.cs file.  Then the program returns to normal use, creating the level form and continuing from there
+
+----------------------------------------------------------------------------
+
+### FEATURE - Escape Button
+Date: 11/08/2020
+This feature adds a button "escape" to exit the fight window.
+
+
+### **btnRun_Click()**
+This function set the battle instance to null and close the window. It does not return any value.
+
+##**Other change**
+-Created, initialized and configured button "escape".
+-Added button escape to fight window.
+
+----------------------------------------------------------------------------
+
+### FEATURE - Random dialogues during fights
+Date: 11/16/2020
+This feature displays labels of random dialogues based on ennemies health level after the button attack is clicked.
+
+### **RandomText()**
+This function returns a string value. This function initially create a random variable and a list of of strings. Then, the index of the list is randomized and the content of said index is assigned to a string variable that is going to be returned.
+
+###**Other Changes**
+-Modified btAttack_Click() function to display dialogue/remove labels during fights.
+-Increased character's health to 30 in order to allow for more dialogue to be displayed.
+-Decreased main characters attack points form 4 to 3 to allow for more dialogue cto be displayed.
+-Created and initialized Labels "dialogue1", "dialogue2", "dialogue3"
+
+----------------------------------------------------------------------------
+
+### FEATURE - SFX
+Date: 11/17/2020
+This feature adds sound effects for the battles in game.
+
+### **RandomText()**
+This function plays a sound dependent upon the enemy for the current battle. It does not return any value.
+
+###**Other Changes**
+-Modified btAttack_Click() to play sounds upon death of enemies and characters as well as attack sounds.
+
