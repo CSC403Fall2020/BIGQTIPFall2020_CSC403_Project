@@ -60,6 +60,8 @@ namespace Fall2020_CSC403_Project
 			this.picWall13 = new System.Windows.Forms.PictureBox();
 			this.picWall14 = new System.Windows.Forms.PictureBox();
 			this.picWall15 = new System.Windows.Forms.PictureBox();
+			this.picWall16 = new System.Windows.Forms.PictureBox();
+			this.picWall17 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize) (this.picEnemyRonald)).BeginInit();
 			((System.ComponentModel.ISupportInitialize) (this.picEnemyTony)).BeginInit();
 			((System.ComponentModel.ISupportInitialize) (this.picWall11)).BeginInit();
@@ -82,6 +84,8 @@ namespace Fall2020_CSC403_Project
 			((System.ComponentModel.ISupportInitialize) (this.picWall13)).BeginInit();
 			((System.ComponentModel.ISupportInitialize) (this.picWall14)).BeginInit();
 			((System.ComponentModel.ISupportInitialize) (this.picWall15)).BeginInit();
+			((System.ComponentModel.ISupportInitialize) (this.picWall16)).BeginInit();
+			((System.ComponentModel.ISupportInitialize) (this.picWall17)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tmrUpdateInGameTime
@@ -110,8 +114,8 @@ namespace Fall2020_CSC403_Project
 			// picEnemyTony
 			// 
 			this.picEnemyTony.BackColor = System.Drawing.Color.Transparent;
-			this.picEnemyTony.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.picEnemyTony.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.kisspng_vertebrate_character_mascot_clip_art_tony_the_tiger_5b08e780ce6ed6_9843005815273102088456;
+			this.picEnemyTony.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.picEnemyTony.Location = new System.Drawing.Point(994, 188);
 			this.picEnemyTony.Margin = new System.Windows.Forms.Padding(6);
 			this.picEnemyTony.Name = "picEnemyTony";
@@ -384,6 +388,30 @@ namespace Fall2020_CSC403_Project
 			this.picWall15.TabIndex = 24;
 			this.picWall15.TabStop = false;
 			// 
+			// picWall16
+			// 
+			this.picWall16.BackColor = System.Drawing.Color.Transparent;
+			this.picWall16.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
+			this.picWall16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.picWall16.Location = new System.Drawing.Point(2186, 2);
+			this.picWall16.Margin = new System.Windows.Forms.Padding(6);
+			this.picWall16.Name = "picWall16";
+			this.picWall16.Size = new System.Drawing.Size(164, 531);
+			this.picWall16.TabIndex = 25;
+			this.picWall16.TabStop = false;
+			// 
+			// picWall17
+			// 
+			this.picWall17.BackColor = System.Drawing.Color.Transparent;
+			this.picWall17.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
+			this.picWall17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.picWall17.Location = new System.Drawing.Point(1248, 2);
+			this.picWall17.Margin = new System.Windows.Forms.Padding(6);
+			this.picWall17.Name = "picWall17";
+			this.picWall17.Size = new System.Drawing.Size(938, 129);
+			this.picWall17.TabIndex = 26;
+			this.picWall17.TabStop = false;
+			// 
 			// FrmLevel
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -391,6 +419,8 @@ namespace Fall2020_CSC403_Project
 			this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (64)))), ((int) (((byte) (64)))), ((int) (((byte) (64)))));
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(2352, 1396);
+			this.Controls.Add(this.picWall17);
+			this.Controls.Add(this.picWall16);
 			this.Controls.Add(this.picWall15);
 			this.Controls.Add(this.picWall14);
 			this.Controls.Add(this.picWall13);
@@ -445,9 +475,15 @@ namespace Fall2020_CSC403_Project
 			((System.ComponentModel.ISupportInitialize) (this.picWall13)).EndInit();
 			((System.ComponentModel.ISupportInitialize) (this.picWall14)).EndInit();
 			((System.ComponentModel.ISupportInitialize) (this.picWall15)).EndInit();
+			((System.ComponentModel.ISupportInitialize) (this.picWall16)).EndInit();
+			((System.ComponentModel.ISupportInitialize) (this.picWall17)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+
+		private System.Windows.Forms.PictureBox picWall17;
+
+		private System.Windows.Forms.PictureBox picWall16;
 
 		private System.Windows.Forms.PictureBox picWall13;
 		private System.Windows.Forms.PictureBox picWall14;

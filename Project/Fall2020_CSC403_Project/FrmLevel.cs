@@ -34,7 +34,7 @@ namespace Fall2020_CSC403_Project
         private void FrmLevel_Load(object sender, EventArgs e)
         {
             const int PADDING = 7;
-            const int NUM_WALLS = 16;
+            const int NUM_WALLS = 18;
 
             player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
             bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
@@ -80,7 +80,12 @@ namespace Fall2020_CSC403_Project
                 PictureBox pic = Controls.Find("picWall" + w.ToString(), true)[0] as PictureBox;
                 walls[w] = new Character(CreatePosition(pic), CreateCollider(pic, PADDING));
             }
-
+            picWall16.Hide();
+            walls[16].Collider.Hide();
+            picWall17.Hide();
+            walls[17].Collider.Hide();
+            
+            
             Game.player = player;
             timeBegin = DateTime.Now;
         }
@@ -132,6 +137,11 @@ namespace Fall2020_CSC403_Project
                             walls[11].Collider.Hide();
                             picWall12.Hide();
                             walls[12].Collider.Hide();
+                            picWall16.Show();
+                            walls[16].Collider.Show();
+                            picWall17.Show();
+                            walls[17].Collider.Show();
+                            
                             player.MoveTo(1040, 600);
                         }
             
@@ -149,6 +159,10 @@ namespace Fall2020_CSC403_Project
                             walls[11].Collider.Show();
                             picWall12.Show();
                             walls[12].Collider.Show();
+                            picWall16.Hide();
+                            walls[16].Collider.Hide();
+                            picWall17.Hide();
+                            walls[17].Collider.Hide();
                             player.MoveTo(1040, 100);
                         }
             // check collision with enemies
