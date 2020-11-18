@@ -1,4 +1,5 @@
 ﻿using Fall2020_CSC403_Project.code;
+using Fall2020_CSC403_Project.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -6,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Timer = System.Threading.Timer;
+using System.Media;
 
 namespace Fall2020_CSC403_Project
 {
@@ -114,7 +116,7 @@ namespace Fall2020_CSC403_Project
             // check collision with walls
             if (HitAWall(player))
             {
-                player.MoveBack();
+                player.MoveBack();  
             }
 
             // check collision with enemies
@@ -170,7 +172,7 @@ namespace Fall2020_CSC403_Project
             player.ResetMoveSpeed();
             player.MoveBack();
             frmBattle = FrmBattle.GetInstance(enemy);
-
+            frmBattle.PlayBattleSound(enemy);
 
             frmBattle.Show();
             if (enemy == bossKoolaid)
