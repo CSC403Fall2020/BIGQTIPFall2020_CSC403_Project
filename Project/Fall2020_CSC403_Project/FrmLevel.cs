@@ -170,7 +170,7 @@ namespace Fall2020_CSC403_Project
             player.ResetMoveSpeed();
             player.MoveBack();
             frmBattle = FrmBattle.GetInstance(enemy);
-            frmBattle.PlayBattleSound(enemy);
+
 
             frmBattle.Show();
             if (enemy == bossKoolaid)
