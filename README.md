@@ -67,12 +67,12 @@ Date: 11/08/2020
 This feature adds a button "escape" to exit the fight window.
 
 
-### **btnRun_Click()**
+#### **btnRun_Click()**
 This function set the battle instance to null and close the window. It does not return any value.
 
-##**Other change**
--Created, initialized and configured button "escape".
--Added button escape to fight window.
+### **Other change**
+- Created, initialized and configured button "escape".
+- Added button escape to fight window.
 
 ----------------------------------------------------------------------------
 
@@ -80,26 +80,27 @@ This function set the battle instance to null and close the window. It does not 
 Date: 11/16/2020
 This feature displays labels of random dialogues based on ennemies health level after the button attack is clicked.
 
-### **RandomText()**
+#### **RandomText()**
 This function returns a string value. This function initially create a random variable and a list of of strings. Then, the index of the list is randomized and the content of said index is assigned to a string variable that is going to be returned.
 
-###**Other Changes**
--Modified btAttack_Click() function to display dialogue/remove labels during fights.
--Increased character's health to 30 in order to allow for more dialogue to be displayed.
--Decreased main characters attack points form 4 to 3 to allow for more dialogue cto be displayed.
--Created and initialized Labels "dialogue1", "dialogue2", "dialogue3"
+#### **Other Changes**
+- Modified btAttack_Click() function to display dialogue/remove labels during fights.
+- Increased character's health to 30 in order to allow for more dialogue to be displayed.
+- Decreased main characters attack points form 4 to 3 to allow for more dialogue cto be displayed.
+- Created and initialized Labels "dialogue1", "dialogue2", "dialogue3"
 
 ----------------------------------------------------------------------------
 
 ### FEATURE - SFX
-Date: 11/17/2020
-This feature adds sound effects for the battles in game.
+- Date: 11/17/2020
+- This feature adds sound effects for the battles in game.
 
-### **RandomText()**
+#### **RandomText()**
 This function plays a sound dependent upon the enemy for the current battle. It does not return any value.
 
-###**Other Changes**
--Modified btAttack_Click() to play sounds upon death of enemies and characters as well as attack sounds.
+#### **Other Changes**
+- Modified btAttack_Click() to play sounds upon death of enemies and characters as well as attack sounds.
+- Created 8 new sounds: Attack_Sound, Enemies_Die, Koolaid_Dies, Peanut_Dies, Flamin_Battle, Koolaid_Battle, Ronald_Battle, and Tony_Battle
 
 -------------------------------------------------------------------------------------
 
@@ -119,3 +120,17 @@ In the collider class, method that deletes collider
 #### **Other Changes**
 -Added names to enemy's class
 -Added Boolean value to FrmBattle to track if enemy is defeated
+
+----------------------------------------------------------------------------
+
+### FEATURE - Player Becomes Cheeto Cat
+- Date: 11/17/2020
+- This feature changes the player's sprite to a cheeto cat when the player is killed by the cheeto enemy.
+
+#### **PlayerDied()**
+This function returns a boolean for if the player died. Returns true if the player is killed by the cheeto.
+
+#### **Other Changes**
+- Modified frm_FormClosed() to check if the player was killed by the cheeto and updates the player's sprite if so.
+- Created 1 new sprite for the player: cheeto_cat
+- Added a wrapper for the player sprite
